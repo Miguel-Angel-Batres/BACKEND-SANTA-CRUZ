@@ -4,7 +4,6 @@ const cors = require('cors');
 const nodemailer=require('nodemailer');
 const app=express()
 const {db,auth}=require('./firebase');
-const { APP_BOOTSTRAP_LISTENER } = require('@angular/core');
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
