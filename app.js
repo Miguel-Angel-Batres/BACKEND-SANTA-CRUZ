@@ -188,6 +188,7 @@ app.get('/api/confirmacion', async (req, res) => {
             return res.status(400).json({ message: 'Token inválido o expirado.' });
         }
         const { email, password, extraData } = pendingSnap.data();
+        console.log('telefono:', extraData.telefono);
         const telefonoSanitizado = sanitizarNumeroMexicano(extraData.telefono);
         console.log('Telefono Sanitizado:', telefonoSanitizado);
         const userCredential = await auth.createUser({
