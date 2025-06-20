@@ -283,7 +283,6 @@ app.get('/api/planes', async (req, res) => {
 function sanitizarNumeroMexicano(numero) {
     if (!numero) return null;
     let limpio = numero.toString().replace(/[\s\-\(\)]/g, ''); // quita espacios, guiones, paréntesis
-    limpio = limpio.replace(/^(\+?52)?(1|044|045|01)?/, ''); // quita prefijos
     if (/^\d{10}$/.test(limpio)) {
         return '+52' + limpio;
     }
