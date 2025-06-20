@@ -189,6 +189,7 @@ app.get('/api/confirmacion', async (req, res) => {
         }
         const { email, password, extraData } = pendingSnap.data();
         const telefonoSanitizado = sanitizarNumeroMexicano(extraData.telefono);
+        console.log('Telefono Sanitizado:', telefonoSanitizado);
         const userCredential = await auth.createUser({
             email,
             password,
